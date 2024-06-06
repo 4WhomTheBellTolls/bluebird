@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{appName}} - Login/Register</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    
+    <main>
+        <div class="form-container">
+            <h2>Login</h2>
+            {{#if loginError}}
+            <p class="error">{{loginError}}</p>
+            {{/if}}
+            <form action="/login" method="POST">
+            </form>
+            <a href="/auth/google"><button>Login with Google</button></a>
+        </div>
+    </main>
+    
+</body>
+</html>

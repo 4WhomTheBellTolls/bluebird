@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{appName}} - Register Username</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    
+    <main>
+        <div class="form-container">
+            <h2>Register Username</h2>
+            {{#if error}}
+            <p class="error">{{error}}</p>
+            {{/if}}
+            <form action="/registerUsername" method="POST">
+                <input type="text" name="username" placeholder="Choose a username">
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </main>
+    
+</body>
+</html>

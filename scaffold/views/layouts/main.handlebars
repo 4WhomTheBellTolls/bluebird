@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{appName}}</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="/images/logo.png" alt="Logo" style="height: 50px;">
+                <h1>{{appName}}</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    {{#if user.username}}
+                        <li><a href="/profile">Profile</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                        <li><a href="/profile">{{user.username.[0]}}</a></li>
+                    {{else}}
+                        <li><a href="/login">Login/Register</a></li>
+                    {{/if}}
+                </ul>
+            </nav>
+        </div>
+    </header>
+    {{{body}}}
+    <footer>
+        <div class="container">
+            <p>&copy; {{year}} {{appName}}. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{appName}} - Profile</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+   
+    <main>
+        <div class="profile">
+            <div class="profile-avatar">{{firstChar user.username}}</div>
+            <div class="profile-details">
+                <p><strong>Username:</strong> {{user.username}}</p>
+                <p><strong>Member since:</strong> {{user.memberSince}}</p>
+            </div>
+        </div>
+        <h2>Your Posts</h2>
+        {{#each posts}}
+        <div class="post">
+            <div class="post-avatar">{{firstChar username}}</div>
+            <div class="post-content">
+                <h3>{{title}}</h3>
+                <p>{{content}}</p>
+                <div class="post-meta">
+                    <span>Posted by {{username}} on {{timestamp}}</span>
+                    <span>Likes: {{likes}}</span>
+                    <form action="/delete/{{id}}" method="POST">
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </main>
+    
+</body>
+</html>
